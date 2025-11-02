@@ -6,29 +6,29 @@ import static lotto.global.ErrorMessage.NOT_DIVIDED_INTO_1000;
 
 public class LottoAmount {
 
-    private final int amount;
+    private final int money;
 
-    public LottoAmount(String input) {
-        int lottoAmount = changeToInt(input);
-        validateDivided(lottoAmount);
-        this.amount = lottoAmount;
+    public LottoAmount(String money) {
+        int payMoney = changeToInt(money);
+        validateDivided(payMoney);
+        this.money = payMoney;
     }
 
     public int calculateLottoAmount() {
-        return amount / REFERENCE_DIVISION_NUMBER;
+        return money / REFERENCE_DIVISION_NUMBER;
     }
 
-    private int changeToInt(String input) {
+    private int changeToInt(String money) {
         try {
-            return Integer.parseInt(input);
+            return Integer.parseInt(money);
         }
         catch (NumberFormatException e) {
             throw new IllegalArgumentException(INVALID_PRICE_NUMBER_TYPE.getMessage());
         }
     }
 
-    private void validateDivided(int lottoAmount) {
-        if (lottoAmount % REFERENCE_DIVISION_NUMBER != 0) {
+    private void validateDivided(int payMoney) {
+        if (payMoney % REFERENCE_DIVISION_NUMBER != 0) {
             throw new IllegalArgumentException(NOT_DIVIDED_INTO_1000.getMessage());
         }
     }
