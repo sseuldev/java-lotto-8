@@ -69,7 +69,7 @@ public class Winning {
         return BigDecimal.valueOf(totalPrize)
                 .divide(BigDecimal.valueOf(totalMoney), 4, RoundingMode.HALF_UP)
                 .multiply(BigDecimal.valueOf(100))
-                .setScale(2, RoundingMode.HALF_UP);
+                .setScale(1, RoundingMode.HALF_UP);
     }
 
 }

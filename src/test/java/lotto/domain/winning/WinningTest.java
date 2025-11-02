@@ -88,7 +88,7 @@ public class WinningTest {
         BigDecimal expectedProfitRate = BigDecimal.valueOf(2000000000 + 30000000 + 50000)
                 .divide(BigDecimal.valueOf(3000), 4, RoundingMode.HALF_UP)
                 .multiply(BigDecimal.valueOf(100))
-                .setScale(2, RoundingMode.HALF_UP);
+                .setScale(1, RoundingMode.HALF_UP);
 
         assertThat(profitRate).isEqualTo(expectedProfitRate);
     }
